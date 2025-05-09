@@ -1,47 +1,79 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <form action="#" method="POST">
-        <fieldset>
-            <legend>Personal Data</legend>
-      <p>
-        Name: <input type="text" name="name" placeholder="Enter your name" required autofocus>
-      </p>
-      <p>
-        Place: <input type="text" name="place" placeholder="Enter your place">
-      </p>
-      <p>
-        Age: <input type="number" name="age" placeholder="Enter number">
-      </p>
-      </fieldset>
-      <button type="submit">Submit</button>
-      <input type  = "reset">
-      </form>
-      <hr>
-      <form action = "#" method = "POST">
-      <p>
-        Date: <input type="date" name="dob">
-      </p>
-      <p>
-        Email: <input type="email" name="email" placeholder="Enter your email">
-      </p>
-      <p>
-        Password: <input type="password" name="password" placeholder="Enter password">
-      </p>
-      <button type="submit">Submit</button>
-      <input type  = "reset">
-      </form>
-      <hr>
-      <form action = "#" method = "POST">
-      <p>
-        Gender: 
-        <input type="radio" name="gender" value="Male"> Male
-        <input type="radio" name="gender" value="Female"> Female
-        <input type="radio" name="gender" value="Others"> Others
-      </p>
+<head>
+  <title>Create a New Account</title>
+</head>
+<body>
 
-      </p>
-      <button type="submit">Submit</button>
-      <input type  = "reset">
-    </form>
-  </body>
+  <h2>Create a new account</h2>
+  <p>It's quick and easy.</p>
+
+  <form>
+    <table>
+      <tr>
+        <td><input type="text" placeholder="First name" required></td>
+        <td><input type="text" placeholder="Surname" required></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><label>Date of birth</label></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <select required>
+            <option value="" disabled selected>Day</option>
+            <!-- Days 1-31 -->
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+            <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+            <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+            <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+            <option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
+            <option>31</option>
+          </select>
+
+          <select required>
+            <option value="" disabled selected>Month</option>
+            <option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option>
+            <option>May</option><option>Jun</option><option>Jul</option><option>Aug</option>
+            <option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option>
+          </select>
+
+          <select required>
+            <option value="" disabled selected>Year</option>
+            <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+            <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+            <option>2017</option><option>2016</option><option>2015</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><label>Gender</label></td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="gender" value="Female"> Female</td>
+        <td><input type="radio" name="gender" value="Male"> Male</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="radio" name="gender" value="Custom"> Custom</td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><input type="text" placeholder="Mobile number or email address" required></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><input type="password" placeholder="New password" required></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><br><button type="submit">Sign Up</button></td>
+      </tr>
+    </table>
+  </form>
+
+  <p><a href="#">Already have an account?</a></p>
+
+</body>
 </html>
