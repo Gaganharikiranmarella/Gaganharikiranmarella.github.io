@@ -13,7 +13,7 @@ header{
     background-color: turquoise;
     color: white;
     padding: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: monospace;
 }
 
 li{
