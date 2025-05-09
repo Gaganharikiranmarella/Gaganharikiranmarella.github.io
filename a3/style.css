@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+caption {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 2px solid #555;
+    padding: 10px;
+    text-align: center;
+}
+
+th[colspan="2"] {
+    background-color: lightblue;
+}
+
+td[colspan="2"] {
+    background-color: pink;
+}
+
+th {
+    background-color: #ddd;
+}
