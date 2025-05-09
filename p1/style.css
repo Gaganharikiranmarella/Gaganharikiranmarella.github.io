@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+}
+
+.container{
+    width: 1000px;
+    margin: auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: turquoise;
+    color: white;
+    padding: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li{
+    display: inline-block;
+    font-size: 24px;
+    padding: 10px;
+}
