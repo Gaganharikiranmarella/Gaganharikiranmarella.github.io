@@ -157,3 +157,37 @@ nav a:hover {
 .project-card a:hover {
   text-decoration: underline;
 }
+
+/* ===== Services Section ===== */
+#services {
+  background-color: #f8d7da;
+  padding: 40px 20px;
+}
+
+.services-heading {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.services-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.services-image img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.services-list ul {
+  list-style: disc inside;
+  font-size: 18px;
+  color: #333;
+  line-height: 2;
+}
