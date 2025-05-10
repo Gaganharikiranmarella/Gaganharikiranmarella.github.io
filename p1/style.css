@@ -50,10 +50,17 @@ nav a:hover {
 #home {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 40px 20px;
   background-color: white;
   border-top: 1px solid #ccc;
+  gap: 40px;
+}
+
+#home > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 #home h1 {
@@ -67,6 +74,7 @@ nav a:hover {
   color: #555;
   line-height: 1.6;
   max-width: 600px;
+  text-align: justify;
 }
 
 .btn {
@@ -84,7 +92,7 @@ nav a:hover {
 }
 
 .box {
-  margin-left: 40px;
+  flex-shrink: 0;
 }
 
 .box img {
