@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding-top: 50px;
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
