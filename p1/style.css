@@ -256,3 +256,38 @@ nav a:hover {
 .slice4 span { top: 180px; left: 130px; }
 .slice5 span { top: 190px; left: 40px; }
 .slice6 span { top: 100px; left: 0px; }
+
+#contact {
+  background-color: #2c2c2c;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.contact-heading {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  font-size: 18px;
+}
+
+.contact-item a {
+  color: #64b5f6; 
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
