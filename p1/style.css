@@ -6,9 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f5f5f5;
 }
 
 .container {
@@ -22,70 +20,76 @@ header {
   align-items: center;
   background-color: turquoise;
   color: white;
-  padding: 20px;
-  font-family: monospace;
+  padding: 10px 20px;
+}
+
+header h1 {
+  font-size: 24px;
 }
 
 nav ul {
   list-style: none;
 }
 
-header li {
+nav li {
   display: inline-block;
-  margin: 0 10px;
+  margin-left: 20px;
   font-size: 14px;
 }
 
-header a {
+nav a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
+  transition: 0.3s;
 }
 
-header a:hover {
+nav a:hover {
   text-decoration: underline;
-}
-
-main {
-  padding: 40px 20px;
-  background-color: white;
 }
 
 #home {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: white;
+  border-top: 1px solid #ccc;
 }
 
 #home h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 22px;
   color: #333;
+  margin-bottom: 15px;
 }
 
 .Summary {
   font-size: 14px;
+  color: #555;
+  line-height: 1.6;
   max-width: 600px;
-  margin-bottom: 20px;
-  color: #444;
 }
 
 .btn {
+  margin-top: 15px;
+  padding: 10px 20px;
   background-color: turquoise;
   color: white;
-  padding: 10px 20px;
   border: none;
   cursor: pointer;
-  font-family: monospace;
-  font-size: 14px;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .btn:hover {
-  background-color: #30c0c0;
+  background-color: #1abc9c;
+}
+
+.box {
+  margin-left: 40px;
 }
 
 .box img {
+  width: 200px;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
