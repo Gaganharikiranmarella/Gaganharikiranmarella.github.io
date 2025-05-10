@@ -107,7 +107,6 @@ nav a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== Projects Section ===== */
 #projects {
   background-color: #e0e0e0;
   padding: 40px 20px;
@@ -158,7 +157,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ===== Services Section ===== */
 #services {
   background-color: #f8d7da;
   padding: 40px 20px;
@@ -191,3 +189,70 @@ nav a:hover {
   color: #333;
   line-height: 2;
 }
+
+#about {
+  background-color: #fff9c4;
+  padding: 40px 20px;
+}
+
+.about-heading {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.skills-container h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.skills-container ul {
+  list-style: square inside;
+  font-size: 18px;
+  color: #333;
+  line-height: 2;
+}
+
+.skill-chart {
+  text-align: center;
+}
+
+.circle-chart {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00bcd4 0% 20%,
+    #4caf50 20% 40%,
+    #ff9800 40% 55%,
+    #9c27b0 55% 70%,
+    #e91e63 70% 85%,
+    #3f51b5 85% 100%
+  );
+}
+
+.circle-chart span {
+  position: absolute;
+  width: 80px;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.slice1 span { top: 10px; left: 85px; }
+.slice2 span { top: 40px; left: 150px; }
+.slice3 span { top: 110px; left: 180px; }
+.slice4 span { top: 180px; left: 130px; }
+.slice5 span { top: 190px; left: 40px; }
+.slice6 span { top: 100px; left: 0px; }
