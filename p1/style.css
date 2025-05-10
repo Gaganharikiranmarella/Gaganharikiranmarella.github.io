@@ -16,7 +16,11 @@ header{
     font-family: monospace;
 }
 
-li{
+header li{
     display: inline-block;
     font-size: 12px;
+}
+
+header a{
+    text-decoration: none;
 }
