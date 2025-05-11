@@ -12,6 +12,7 @@ header {
   color: #fff;
   padding: 20px 0;
   text-align: center;
+  position: sticky;
 }
 
 header h1 {
@@ -136,7 +137,7 @@ footer {
   padding: 10px;
   background-color: #333;
   color: white;
-  position: fixed;
+  position: sticky;
   width: 100%;
   bottom: 0;
 }
