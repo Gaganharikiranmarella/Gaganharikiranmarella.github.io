@@ -7,18 +7,19 @@ body {
   color: #333;
 }
 
+/* HEADER */
 header {
-  background-color: #333;
+  background-color: turquoise;
   color: #fff;
   padding: 20px 0;
   text-align: center;
-  position: sticky;
 }
 
 header h1 {
   margin: 0;
 }
 
+/* NAVBAR */
 nav ul {
   padding: 0;
   list-style: none;
@@ -42,6 +43,7 @@ nav ul li a:hover {
   background-color: #555;
 }
 
+/* GENERAL SECTION */
 section {
   padding: 20px;
   margin: 20px;
@@ -50,7 +52,48 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Project Cards */
+/* FIRST SECTION LAYOUT */
+#intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#intro .intro-text {
+  flex: 1;
+  text-align: justify;
+}
+
+#intro .intro-image {
+  flex: 1;
+  text-align: right;
+}
+
+#intro .intro-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* SIGN UP BUTTON */
+.signup-button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s, transform 0.4s;
+  margin-top: 15px;
+}
+
+.signup-button:hover {
+  background-color: turquoise;
+  transform: scale(1.05);
+  color: white;
+}
+
+/* PROJECT CARDS */
 .project-card {
   border: 1px solid #ddd;
   padding: 15px;
@@ -72,7 +115,7 @@ section {
   color: white;
 }
 
-/* Services List */
+/* SERVICES */
 .services-list {
   list-style-type: square;
   padding-left: 20px;
@@ -92,7 +135,7 @@ section {
   transform: scale(1.05);
 }
 
-/* Skills List */
+/* SKILLS */
 .skills-container ul {
   list-style-type: disc;
   padding-left: 20px;
@@ -112,7 +155,7 @@ section {
   transform: scale(1.05);
 }
 
-/* Contact Items */
+/* CONTACT */
 .contact-item {
   margin-bottom: 10px;
   padding: 5px;
@@ -131,13 +174,13 @@ section {
   color: black;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #333;
+  background-color: turquoise;
   color: white;
-  position: sticky;
+  position: fixed;
   width: 100%;
   bottom: 0;
 }
