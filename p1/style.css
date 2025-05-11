@@ -188,3 +188,26 @@ footer {
   width: 100%;
   bottom: 0;
 }
+
+/* MEDIA QUERY FOR MOBILE DEVICES */
+@media (max-width: 768px) {
+  header {
+    background-color: lightpink; /* Change turquoise to light pink */
+  }
+
+  .signup-button:hover {
+    background-color: lightpink; /* Change turquoise to light pink */
+  }
+
+  .project-card:hover {
+    background-color: lightpink; /* Change turquoise to light pink */
+  }
+
+  .project-card:hover a {
+    color: black;
+  }
+
+  footer {
+    background-color: lightpink; /* Change turquoise to light pink */
+  }
+}
