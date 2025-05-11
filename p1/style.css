@@ -4,15 +4,16 @@ body {
   padding: 0;
   line-height: 1.6;
   background-color: #f4f4f4;
-  color: #333;
+  color: turquoise;
 }
 
 /* HEADER */
 header {
   background-color: turquoise;
   color: #fff;
-  padding: 20px 0;
+  padding: 20px ;
   text-align: center;
+  position: sticky;
 }
 
 header h1 {
@@ -43,7 +44,7 @@ nav ul li a:hover {
   background-color: #555;
 }
 
-/* GENERAL SECTION */
+/* SECTION GENERAL */
 section {
   padding: 20px;
   margin: 20px;
@@ -52,33 +53,36 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* FIRST SECTION LAYOUT */
+/* HOME / INTRO SECTION */
 #intro {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-#intro .intro-text {
+.intro-text {
   flex: 1;
   text-align: justify;
 }
 
-#intro .intro-image {
+.intro-image {
   flex: 1;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
-#intro .intro-image img {
+.intro-image img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
 /* SIGN UP BUTTON */
 .signup-button {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: green;
   color: white;
   border: none;
   border-radius: 5px;
@@ -180,7 +184,6 @@ footer {
   padding: 10px;
   background-color: turquoise;
   color: white;
-  position: fixed;
   width: 100%;
   bottom: 0;
 }
