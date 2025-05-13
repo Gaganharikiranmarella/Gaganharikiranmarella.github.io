@@ -1,22 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FoodMart - Grocery Store</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+<html>
+    <head>
+<title>Food Mart</title>
+    </head>
+    <body>
 
-  <!-- Dynamic Components -->
-  <div id="header"></div>
-  <div id="hero"></div>
-  <div id="offers"></div>
-  <div id="categories"></div>
-  <div id="brands"></div>
-  <div id="products"></div>
-  <div id="footer"></div>
+        <header>
+            <div class="header">
+  <div class="logo-title">
+    <img src="your-logo.png" alt="Logo" class="logo" />
+    <div class="title-caption">
+      <h1><span class="black">FOOD</span><span class="orange">MART</span></h1>
+      <p class="caption">Grocery Store</p>
+    </div>
+  </div>
 
-  <script src="components.js"></script>
-</body>
+  <div class="search-section">
+    <select class="category-dropdown">
+      <option>All Categories</option>
+      <option>Fruits</option>
+      <option>Vegetables</option>
+      <option>Dairy</option>
+      <option>Meat</option>
+      <option>Spices</option>
+      <option>Snacks</option>
+      <option>Breakfast</option>
+      <option>Lunch</option>
+      <option>Dinner</option>
+      <option>Exotica</option>
+    </select>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search for your delicacy..." />
+      <button onclick="handleSearch()">
+        🔍
+      </button>
+    </div>
+
+    <div class="contact">
+      <p>📞 Contact us: +01 1800 - FOODMART</p>
+    </div>
+  </div>
+
+  <div class="cart-dropdown">
+    <button onclick="toggleCart()">🛒 Your Cart</button>
+    <div class="cart-items" id="cartItems">
+      <p>Your cart is empty.</p>
+    </div>
+  </div>
+</div>
+
+        </header>
+
+    </body>
 </html>

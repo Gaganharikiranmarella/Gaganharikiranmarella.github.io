@@ -1,0 +1,115 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+}
+
+.title-caption h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.black {
+  color: black;
+}
+
+.orange {
+  color: orange;
+}
+
+.caption {
+  font-size: 12px;
+  color: gray;
+  margin-top: 2px;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+.category-dropdown {
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-box {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  border: none;
+  outline: none;
+  width: 220px;
+}
+
+.search-box button {
+  background-color: orange;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+.contact {
+  font-size: 13px;
+  color: #333;
+}
+
+.cart-dropdown {
+  position: relative;
+}
+
+.cart-dropdown button {
+  background-color: #ff6600;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-items {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background-color: white;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  z-index: 1000;
+}
+
+.cart-items p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
