@@ -147,3 +147,96 @@
   font-size: 14px;
   color: #555;
 }
+
+/* Offers Section */
+.offers {
+  display: flex;
+  gap: 20px;
+  padding: 40px 30px;
+  background: #fdfdfd;
+}
+
+.offer-left, .offer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.offer-left {
+  flex: 1;
+}
+
+.offer-right {
+  flex: 1;
+}
+
+/* Slide Styles */
+.slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.square-slide {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: rgba(173, 216, 230, 0.3); /* light blue */
+}
+
+.rectangle-slide {
+  height: 48%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.green-slide {
+  background-color: rgba(144, 238, 144, 0.3); /* light green */
+}
+
+.red-slide {
+  background-color: rgba(255, 182, 193, 0.3); /* light red */
+}
+
+.slide-content {
+  flex: 1;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.slide-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.slide-content p {
+  font-size: 14px;
+  color: #666;
+}
+
+.slide img {
+  width: 130px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,58 +1,91 @@
 <html>
-<head>
-  <title>FOOD MART</title>
-  <link rel="stylesheet" href="header.css" />
-  <script src="header.js" defer></script>
-</head>
+  <head>
+    <title>FOOD MART</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
 
-    <body>
+  <body>
+    <header>
+      <div class="header">
+        <div class="logo-title">
+          <img src="images/logo.jpg" alt="Logo" class="logo" />
+          <div class="title-caption">
+            <h1>
+              <span class="black">FOOD</span><span class="orange">MART</span>
+            </h1>
+            <p class="caption">Grocery Store</p>
+          </div>
+        </div>
 
-        <header>
-            <div class="header">
-  <div class="logo-title">
-    <img src="images/logo.jpg" alt="Logo" class="logo" />
-    <div class="title-caption">
-      <h1><span class="black">FOOD</span><span class="orange">MART</span></h1>
-      <p class="caption">Grocery Store</p>
+        <div class="search-section">
+          <select class="category-dropdown">
+            <option>All Categories</option>
+            <option>Fruits</option>
+            <option>Vegetables</option>
+            <option>Dairy</option>
+            <option>Meat</option>
+            <option>Spices</option>
+            <option>Snacks</option>
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+            <option>Exotica</option>
+          </select>
+
+          <div class="search-box">
+            <input type="text" placeholder="Search for your delicacy..." />
+            <button onclick="handleSearch()">🔍</button>
+          </div>
+
+          <div class="contact">
+            <p>📞 Contact us: +01 1800 - FOODMART</p>
+          </div>
+        </div>
+
+        <div class="cart-dropdown">
+          <button onclick="toggleCart()">🛒 Your Cart</button>
+          <div class="cart-items" id="cartItems">
+            <p>Your cart is empty.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+<section class="offers">
+  <div class="offer-left">
+    <!-- Square Slide -->
+    <div class="slide square-slide active" data-type="square">
+      <div class="slide-content">
+        <h3>Big Savings Today!</h3>
+        <p>Up to 50% off on fresh groceries. Limited time!</p>
+      </div>
+      <img src="images/square-offer.jpg" alt="Offer" />
     </div>
   </div>
 
-  <div class="search-section">
-    <select class="category-dropdown">
-      <option>All Categories</option>
-      <option>Fruits</option>
-      <option>Vegetables</option>
-      <option>Dairy</option>
-      <option>Meat</option>
-      <option>Spices</option>
-      <option>Snacks</option>
-      <option>Breakfast</option>
-      <option>Lunch</option>
-      <option>Dinner</option>
-      <option>Exotica</option>
-    </select>
-
-    <div class="search-box">
-      <input type="text" placeholder="Search for your delicacy..." />
-      <button onclick="handleSearch()">
-        🔍
-      </button>
+  <div class="offer-right">
+    <!-- Top Rectangle Slide -->
+    <div class="slide rectangle-slide green-slide" data-type="green">
+      <div class="slide-content">
+        <h3>Fresh Arrival</h3>
+        <p>Get the freshest vegetables straight from the farm.</p>
+      </div>
+      <img src="images/green-offer.jpg" alt="Green Offer" />
     </div>
 
-    <div class="contact">
-      <p>📞 Contact us: +01 1800 - FOODMART</p>
+    <!-- Bottom Rectangle Slide -->
+    <div class="slide rectangle-slide red-slide" data-type="red">
+      <div class="slide-content">
+        <h3>Hot Deals</h3>
+        <p>Snacks and more at unbeatable prices. Grab yours now!</p>
+      </div>
+      <img src="images/red-offer.jpg" alt="Red Offer" />
     </div>
   </div>
+</section>
 
-  <div class="cart-dropdown">
-    <button onclick="toggleCart()">🛒 Your Cart</button>
-    <div class="cart-items" id="cartItems">
-      <p>Your cart is empty.</p>
-    </div>
-  </div>
-</div>
-
-        </header>
-
-    </body>
+    </main>
+  </body>
 </html>
