@@ -115,3 +115,18 @@ section h2 {
 .food-card button:hover {
   background-color: #1e6b47;
 }
+
+nav button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #ccc;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+nav button.active {
+  background-color: #4CAF50;
+  color: white;
+}
