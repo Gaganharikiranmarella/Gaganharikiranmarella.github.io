@@ -153,3 +153,20 @@ section h2 {
 .food-card button:hover {
   background-color: #1e6b47;
 }
+
+#cartBtn,
+#billBtn {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+#cartBtn:hover,
+#billBtn:hover {
+  background-color: #e69500;
+}

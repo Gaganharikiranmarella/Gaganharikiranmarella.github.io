@@ -27,5 +27,13 @@
     });
   });
 
+    function showCart() {
+    alert("Cart is currently empty.");
+  }
+
+  function showBill() {
+    alert("No items to bill.");
+  }
+
 
   
