@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green StrEat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Green StrEat</h1>
+    <nav>
+      <button id="greenBtn" class="active" onclick="showSection('green')">Green Foods</button>
+      <button id="cookedBtn" onclick="showSection('cooked')">Cooked Foods</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Green Foods Section -->
+    <section id="greenSection">
+      <h2>Fresh Fruits & Vegetables</h2>
+      <div class="card-grid">
+        <div class="food-card">
+          <img src="https://via.placeholder.com/100" alt="Apple" />
+          <h3>Apple</h3>
+          <p>₹50/kg</p>
+          <input type="number" placeholder="Qty" />
+          <button>Add to Cart</button>
+        </div>
+        <div class="food-card">
+          <img src="https://via.placeholder.com/100" alt="Spinach" />
+          <h3>Spinach</h3>
+          <p>₹30/bunch</p>
+          <input type="number" placeholder="Qty" />
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cooked Foods Section -->
+    <section id="cookedSection" style="display: none;">
+      <h2>Delicious Cooked Meals</h2>
+      <div class="card-grid">
+        <div class="food-card">
+          <img src="https://via.placeholder.com/100" alt="Veg Pulao" />
+          <h3>Veg Pulao</h3>
+          <p>₹80/plate</p>
+          <input type="number" placeholder="Qty" />
+          <button>Add to Cart</button>
+        </div>
+        <div class="food-card">
+          <img src="https://via.placeholder.com/100" alt="Samosa" />
+          <h3>Samosa</h3>
+          <p>₹15/pc</p>
+          <input type="number" placeholder="Qty" />
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
