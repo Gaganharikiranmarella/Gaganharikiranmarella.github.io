@@ -22,24 +22,9 @@
         </tr>
         <tr>
           <td colspan="2">
-            <select required>
-              <option value="" disabled selected>Day</option>
-              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-              <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-              <option>31</option>
-            </select>
-
-            <select required>
-              <option value="" disabled selected>Month</option>
-              <option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option>
-              <option>May</option><option>Jun</option><option>Jul</option><option>Aug</option>
-              <option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option>
-            </select>
-
-            <select required>
-              <option value="" disabled selected>Year</option>
-              <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
-            </select>
+            <select id="daySelect" required></select>
+            <select id="monthSelect" required></select>
+            <select id="yearSelect" required></select>
           </td>
         </tr>
 
@@ -48,9 +33,17 @@
         </tr>
         <tr>
           <td colspan="2" class="radio-row">
-            <label><input type="radio" name="gender"> Female</label>
-            <label><input type="radio" name="gender"> Male</label>
-            <label><input type="radio" name="gender"> Custom</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label>
+              <input type="radio" name="gender" value="Custom" id="customGender"> Custom
+            </label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div id="customPronounBox"></div>
           </td>
         </tr>
 
@@ -71,5 +64,6 @@
     <a href="#">Already have an account?</a>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>

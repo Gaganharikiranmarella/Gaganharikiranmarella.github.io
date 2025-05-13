@@ -72,3 +72,15 @@ a {
   text-align: center;
   margin-top: 15px;
 }
+
+/* Extra styling for pronoun box */
+#customPronounBox select,
+#customPronounBox button {
+  margin-top: 10px;
+  width: 100%;
+}
+#pronounDisplay {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
