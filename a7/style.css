@@ -7,6 +7,12 @@ body {
   height: 100vh;
 }
 
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
 .calculator {
   background-color: #fff;
   padding: 20px 30px;
@@ -38,6 +44,10 @@ button:hover {
 }
 
 #result {
-  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   font-size: 18px;
+  min-width: 200px;
 }
