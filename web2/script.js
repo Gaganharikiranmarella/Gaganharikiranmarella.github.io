@@ -45,3 +45,13 @@ document.querySelectorAll(".wishlist-btn").forEach(btn => {
     btn.textContent = btn.textContent === "♡" ? "❤️" : "♡";
   });
 });
+
+  document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    if(email) {
+      alert("Thanks for subscribing with: " + email);
+      this.reset();
+    }
+  });
+
