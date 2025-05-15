@@ -21,7 +21,13 @@ const renderFruits = () => {
       <img src="${img}" alt="${name}">
       <h3>${name}</h3>
       <p>₹${price}</p>
+      <button class="add-btn">Add to Cart</button>
     `;
+    
+    card.querySelector(".add-btn").addEventListener("click", () => {
+      console.log(`${name} added to cart.`);
+    });
+
     container.appendChild(card);
   });
 };
