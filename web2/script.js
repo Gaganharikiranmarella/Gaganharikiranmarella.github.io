@@ -29,3 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Slide every 4 seconds
   setInterval(cycleSlides, 4000);
 });
+
+// Scroll brand section with arrow keys (optional)
+document.addEventListener("keydown", (e) => {
+  const carousel = document.querySelector(".brand-carousel");
+  if (!carousel) return;
+
+  if (e.key === "ArrowRight") carousel.scrollLeft += 100;
+  if (e.key === "ArrowLeft") carousel.scrollLeft -= 100;
+});
+
+// Wishlist toggle (optional)
+document.querySelectorAll(".wishlist-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.textContent = btn.textContent === "♡" ? "❤️" : "♡";
+  });
+});
