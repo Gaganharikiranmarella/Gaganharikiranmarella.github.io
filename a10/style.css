@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  margin: 20px;
+  color: #333;
+}
+
+.fruit-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.fruit-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.fruit-card:hover {
+  transform: scale(1.05);
+}
+
+.fruit-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.fruit-card h3 {
+  margin: 0;
+  color: #444;
+}
+
+.fruit-card p {
+  margin: 8px 0 0;
+  font-weight: bold;
+  color: #007b5e;
+}
