@@ -12,6 +12,36 @@ body {
   color: #333;
 }
 
+.input-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-form input {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 180px;
+}
+
+.input-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-form button:hover {
+  background-color: #0056b3;
+}
+
 .fruit-container {
   display: flex;
   flex-wrap: wrap;
