@@ -5,13 +5,17 @@ let fruits = [
   { id: 3, name: "Mango", price: 80, status: "pending" }
 ];
 
-// Function to update price and status using spread operator
+// Function to update price, status, and add total using spread operator
 const updateFruits = (items, updatedPrices) => {
-  return items.map((item, index) => ({
-    ...item,
-    price: updatedPrices[index] ?? item.price, // Use new price if provided
-    status: "complete"
-  }));
+  return items.map((item, index) => {
+    const newPrice = updatedPrices[index] ?? item.price;
+    return {
+      ...item,
+      price: newPrice,
+      status: "complete",
+      total: newPrice // assuming total = price here
+    };
+  });
 };
 
 // Example usage:
