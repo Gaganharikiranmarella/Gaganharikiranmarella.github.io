@@ -12,7 +12,7 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const main = async () => {
   const inputs = [
-    [2, 3], 
+    [2, 1], 
     [7, 9]  
   ];
 
