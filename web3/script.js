@@ -6,6 +6,15 @@ const products = [
 
 const cart = {};
 
+const notify = (message) => {
+  const note = document.getElementById("notify");
+  note.textContent = message;
+  note.style.display = "block";
+  setTimeout(() => {
+    note.style.display = "none";
+  }, 3000);
+};
+
 const showProducts = () => {
   const root = document.getElementById("root");
   root.innerHTML = "<h2>Product List</h2>";
@@ -17,7 +26,7 @@ const showProducts = () => {
     box.innerHTML = `
       <h3>${product.name}</h3>
       <p>Price: ₹${product.price}</p>
-      <button class="btn" onclick="addToCart(${product.id})">Add to cart</button>
+      <button onclick="addToCart(${product.id})">Add to Cart</button>
     `;
 
     root.appendChild(box);
@@ -26,21 +35,15 @@ const showProducts = () => {
 
 const addToCart = (id) => {
   cart[id] = (cart[id] || 0) + 1;
-  alert(`Added product ${id} to cart. Quantity: ${cart[id]}`);
+  notify("Item added. Check cart.");
 };
 
-const increaseQuantity = (id) => {
-  cart[id]++;
-  dispCart();
-};
-
-const decreaseQuantity = (id) => {
-  if (cart[id] > 1) {
+const removeFromCart = (id) => {
+  if (cart[id]) {
     cart[id]--;
-  } else {
-    delete cart[id];
+    if (cart[id] === 0) delete cart[id];
+    dispCart();
   }
-  dispCart();
 };
 
 const dispCart = () => {
@@ -57,24 +60,21 @@ const dispCart = () => {
   let total = 0;
 
   for (let id in cart) {
-    const prod = products.find(p => p.id == id);
+    const product = products.find(p => p.id == id);
     const quantity = cart[id];
-    const itemTotal = prod.price * quantity;
+    const itemTotal = product.price * quantity;
     total += itemTotal;
 
     const item = document.createElement("div");
     item.className = "cart-item";
-
     item.innerHTML = `
-      <h4>${prod.name}</h4>
-      <div class="qty-controls">
-        <button class="qty-btn" onclick="decreaseQuantity(${id})">−</button>
-        <span class="qty-display">${quantity}</span>
-        <button class="qty-btn" onclick="increaseQuantity(${id})">+</button>
+      <h4>${product.name}</h4>
+      <span>Qty: ${quantity} | ₹${itemTotal}</span>
+      <div class="quantity-control">
+        <button onclick="addToCart(${id})">+</button>
+        <button onclick="removeFromCart(${id})">-</button>
       </div>
-      <p>Price: ₹${prod.price} | Total: ₹${itemTotal}</p>
     `;
-
     container.appendChild(item);
   }
 
@@ -86,11 +86,6 @@ const dispCart = () => {
   root.appendChild(totalDisplay);
 };
 
-// Load default product page
 window.onload = showProducts;
-
-// Handle nav buttons
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("homeBtn").onclick = showProducts;
-  document.getElementById("cartBtn").onclick = dispCart;
-});
+document.getElementById("homeBtn").onclick = showProducts;
+document.getElementById("cartBtn").onclick = dispCart;
