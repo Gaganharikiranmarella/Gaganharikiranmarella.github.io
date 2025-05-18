@@ -1,21 +1,33 @@
 
-const toggleButtons = [document.getElementById("darkModeToggle")];
-toggleButtons.forEach(button => {
-  button.addEventListener("click", () => {
+function toggleCart() {
+  const cart = document.querySelector(".cart-dropdown");
+  cart.classList.toggle("active");
+}
+
+function handleSearch() {
+  const input = document.querySelector(".search-box input");
+  alert(`You searched for: ${input.value}`);
+}
+
+const toggleButtons = [];
+toggleButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
   });
 });
 
-const form = document.getElementById("contactForm");
-const fields = ["name", "email", "message"];
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+const forms = document.querySelectorAll("form");
+forms.forEach(form => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  const formData = {};
-  fields.forEach(id => {
-    formData[id] = document.getElementById(id).value.trim();
+    const inputs = Array.from(form.querySelectorAll("input, textarea"));
+    const values = {};
+    inputs.forEach(input => {
+      values[input.name || input.placeholder] = input.value;
+    });
+
+    alert("Form submitted: " + JSON.stringify(values, null, 2));
+    form.reset();
   });
-
-  alert(`Thank you, ${formData.name}! Your message has been sent.`);
-  form.reset();
 });
