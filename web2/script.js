@@ -1,33 +1,57 @@
+function handleSearch() {
+  const searchQuery = document.querySelector('.search-box input').value;
+  alert("Searching for: " + searchQuery);
+}
 
 function toggleCart() {
-  const cart = document.querySelector(".cart-dropdown");
-  cart.classList.toggle("active");
+  const cart = document.getElementById("cartItems");
+  cart.style.display = (cart.style.display === "block") ? "none" : "block";
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  let index = 0;
 
-function handleSearch() {
-  const input = document.querySelector(".search-box input");
-  alert(`You searched for: ${input.value}`);
-}
-
-const toggleButtons = [];
-toggleButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
-});
-
-const forms = document.querySelectorAll("form");
-forms.forEach(form => {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const inputs = Array.from(form.querySelectorAll("input, textarea"));
-    const values = {};
-    inputs.forEach(input => {
-      values[input.name || input.placeholder] = input.value;
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.remove("active");
+      if (idx === i) slide.classList.add("active");
     });
+  }
 
-    alert("Form submitted: " + JSON.stringify(values, null, 2));
-    form.reset();
+  function cycleSlides() {
+    showSlide(index);
+    index = (index + 1) % slides.length;
+  }
+
+  // Initial show
+  cycleSlides();
+
+  // Slide every 4 seconds
+  setInterval(cycleSlides, 4000);
+});
+
+// Scroll brand section with arrow keys (optional)
+document.addEventListener("keydown", (e) => {
+  const carousel = document.querySelector(".brand-carousel");
+  if (!carousel) return;
+
+  if (e.key === "ArrowRight") carousel.scrollLeft += 100;
+  if (e.key === "ArrowLeft") carousel.scrollLeft -= 100;
+});
+
+// Wishlist toggle (optional)
+document.querySelectorAll(".wishlist-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.textContent = btn.textContent === "♡" ? "❤️" : "♡";
   });
 });
+
+  document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    if(email) {
+      alert("Thanks for subscribing with: " + email);
+      this.reset();
+    }
+  });
+
