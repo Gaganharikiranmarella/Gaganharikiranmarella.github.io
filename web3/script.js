@@ -30,3 +30,23 @@ const showProducts = () => {
 const addToCart = (productId) => {
   alert(`Product ${productId} added to cart!`);
 };
+
+const dispCart = () => {
+  const root = document.getElementById("root");
+  root.innerHTML = "<h2>Cart</h2>";
+
+  if (Object.keys(cart).length === 0) {
+    root.innerHTML += "<p>Your cart is empty.</p>";
+    return;
+  }
+
+  const cartList = document.createElement("ul");
+  for (const id in cart) {
+    const product = products.find(p => p.id == id);
+    const li = document.createElement("li");
+    li.textContent = `${product.name} - Quantity: ${cart[id]}`;
+    cartList.appendChild(li);
+  }
+
+  root.appendChild(cartList);
+};
