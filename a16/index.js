@@ -34,9 +34,9 @@ const totalOrder = products.reduce((sum, product) => {
 console.log("Total Order Value:", totalOrder);*/
 
 const products=[
-    {id:1, name: "p1",price: 35},
-    {id:2, name: "p2",price: 35},
-    {id:3, name:"p3", price:35},
+    {id:1, name: "p1", price: 35},
+    {id:2, name: "p2", price: 35},
+    {id:3, name: "p3", price:35},
 ];
 const cart = {1 : 7, 2 : 9}
 const total = products.reduce((sum,value)=>{
