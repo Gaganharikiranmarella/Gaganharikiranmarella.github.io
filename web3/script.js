@@ -25,12 +25,22 @@ const showProducts = () => {
 };
 
 const addToCart = (id) => {
-  if (cart[id]) {
-    cart[id]++;
-  } else {
-    cart[id] = 1;
-  }
+  cart[id] = (cart[id] || 0) + 1;
   alert(`Added product ${id} to cart. Quantity: ${cart[id]}`);
+};
+
+const increaseQuantity = (id) => {
+  cart[id]++;
+  dispCart();
+};
+
+const decreaseQuantity = (id) => {
+  if (cart[id] > 1) {
+    cart[id]--;
+  } else {
+    delete cart[id];
+  }
+  dispCart();
 };
 
 const dispCart = () => {
@@ -44,7 +54,6 @@ const dispCart = () => {
 
   const container = document.createElement("div");
   container.className = "cart-container";
-
   let total = 0;
 
   for (let id in cart) {
@@ -55,10 +64,17 @@ const dispCart = () => {
 
     const item = document.createElement("div");
     item.className = "cart-item";
+
     item.innerHTML = `
       <h4>${prod.name}</h4>
-      <p>Qty: ${quantity} | ₹${itemTotal}</p>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="decreaseQuantity(${id})">−</button>
+        <span class="qty-display">${quantity}</span>
+        <button class="qty-btn" onclick="increaseQuantity(${id})">+</button>
+      </div>
+      <p>Price: ₹${prod.price} | Total: ₹${itemTotal}</p>
     `;
+
     container.appendChild(item);
   }
 
@@ -70,10 +86,10 @@ const dispCart = () => {
   root.appendChild(totalDisplay);
 };
 
-// Run showProducts initially
+// Load default product page
 window.onload = showProducts;
 
-// Add event listeners to Home and Cart buttons
+// Handle nav buttons
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("homeBtn").onclick = showProducts;
   document.getElementById("cartBtn").onclick = dispCart;

@@ -1,204 +1,124 @@
-/* Product box with subtle gradient and shadow */
-.product-box {
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px;
-  width: 180px;
-  text-align: center;
-  display: inline-block;
-  background: linear-gradient(145deg, #ffffff, #e6e6ff);
-  box-shadow: 0 8px 15px rgba(0, 0, 50, 0.1),
-              inset 0 -3px 10px rgba(255, 255, 255, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
-}
-
-.product-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 25px rgba(0, 0, 70, 0.2),
-              inset 0 -3px 10px rgba(255, 255, 255, 0.8);
-}
-
-/* Product title */
-.product-box h3 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-
-/* Price styling */
-.product-box p {
-  font-size: 1rem;
-  color: #34495e;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-/* Button styling */
-.product-box button {
-  background: #5a67d8;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  font-size: 0.9rem;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 0 5px 12px rgba(90, 103, 216, 0.4);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-box button:hover {
-  background: #434190;
-  box-shadow: 0 8px 18px rgba(67, 65, 144, 0.6);
-}
-
-/* Reset ul */
-ul {
-  list-style: none;
-  padding-left: 0;
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f0f4f8;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
 }
 
-/* Header nav */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 header ul {
   display: flex;
-  gap: 25px;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
   cursor: pointer;
-  padding: 10px 0;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #2c3e50;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
 header ul li:hover {
-  color: #5a67d8;
-  border-bottom: 2px solid #5a67d8;
-  text-decoration: none;
-  font-weight: 700;
+  background-color: #555;
+  color: #fff;
 }
 
-/* Add some spacing around header */
-header {
-  padding: 20px 40px;
-  background: #f9faff;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-/* Footer styling */
-footer {
-  text-align: center;
-  padding: 15px 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.9rem;
-  color: #777;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
-}
-
-/* Product box with subtle gradient and shadow */
 .product-box {
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 15px;
+  margin: 10px;
+  display: inline-block;
   width: 180px;
   text-align: center;
-  display: inline-block;
-  background: linear-gradient(145deg, #ffffff, #e6e6ff);
-  box-shadow: 0 8px 15px rgba(0, 0, 50, 0.1),
-              inset 0 -3px 10px rgba(255, 255, 255, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
 }
 
 .product-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 25px rgba(0, 0, 70, 0.2),
-              inset 0 -3px 10px rgba(255, 255, 255, 0.8);
+  transform: scale(1.03);
 }
 
-/* Product title */
-.product-box h3 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-
-/* Price styling */
-.product-box p {
-  font-size: 1rem;
-  color: #34495e;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-/* Button styling */
-.product-box button {
-  background: #5a67d8;
+.btn {
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 18px;
-  font-size: 0.9rem;
-  border-radius: 25px;
+  padding: 8px 12px;
+  border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 5px 12px rgba(90, 103, 216, 0.4);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s;
 }
 
-.product-box button:hover {
-  background: #434190;
-  box-shadow: 0 8px 18px rgba(67, 65, 144, 0.6);
+.btn:hover {
+  background-color: #0056b3;
 }
 
-/* Reset ul */
-ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Header nav */
-header ul {
+.cart-container {
   display: flex;
-  gap: 25px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.qty-btn {
+  background-color: #ff6347;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 4px;
   cursor: pointer;
-  padding: 10px 0;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #2c3e50;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease;
+  font-weight: bold;
 }
 
-header ul li:hover {
-  color: #5a67d8;
-  border-bottom: 2px solid #5a67d8;
-  text-decoration: none;
-  font-weight: 700;
+.qty-btn:hover {
+  background-color: #e5533d;
 }
 
-/* Add some spacing around header */
-header {
-  padding: 20px 40px;
-  background: #f9faff;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-/* Footer styling */
-footer {
+.qty-display {
+  font-size: 16px;
+  min-width: 30px;
   text-align: center;
-  padding: 15px 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.9rem;
-  color: #777;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
+  display: inline-block;
 }
 
+.total-price {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
