@@ -33,9 +33,12 @@ const showProducts = () => {
   });
 };
 
-const addToCart = (id) => {
+const addToCart = (id, silent = false) => {
   cart[id] = (cart[id] || 0) + 1;
-  notify("Item added. Check cart.");
+  if (!silent) {
+    notify("Item added. Check cart.");
+  }
+  if (silent) dispCart(); // update cart display immediately if in cart
 };
 
 const removeFromCart = (id) => {
@@ -71,7 +74,7 @@ const dispCart = () => {
       <h4>${product.name}</h4>
       <span>Qty: ${quantity} | ₹${itemTotal}</span>
       <div class="quantity-control">
-        <button onclick="addToCart(${id})">+</button>
+        <button onclick="addToCart(${id}, true)">+</button>
         <button onclick="removeFromCart(${id})">-</button>
       </div>
     `;
@@ -86,6 +89,7 @@ const dispCart = () => {
   root.appendChild(totalDisplay);
 };
 
+// Event bindings
 window.onload = showProducts;
 document.getElementById("homeBtn").onclick = showProducts;
 document.getElementById("cartBtn").onclick = dispCart;
