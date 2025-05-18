@@ -1,4 +1,4 @@
-// Dark Mode Toggle using array
+
 const toggleButtons = [document.getElementById("darkModeToggle")];
 toggleButtons.forEach(button => {
   button.addEventListener("click", () => {
@@ -6,7 +6,6 @@ toggleButtons.forEach(button => {
   });
 });
 
-// Contact Form Submission using array
 const form = document.getElementById("contactForm");
 const fields = ["name", "email", "message"];
 form.addEventListener("submit", function (e) {
