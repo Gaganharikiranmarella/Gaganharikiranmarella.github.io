@@ -16,8 +16,8 @@ const showProducts = () => {
 
     box.innerHTML = `
       <h3>${product.name}</h3>
-      <p>Price: $${product.price}</p>
-      <button onclick="addToCart(${product.id})">Add to cart</button>
+      <p>Price: ₹${product.price}</p>
+      <button class="btn" onclick="addToCart(${product.id})">Add to cart</button>
     `;
 
     root.appendChild(box);
@@ -35,23 +35,46 @@ const addToCart = (id) => {
 
 const dispCart = () => {
   const root = document.getElementById("root");
-  root.innerHTML = "<h2>Cart</h2>";
+  root.innerHTML = "<h2>Your Cart</h2>";
 
   if (Object.keys(cart).length === 0) {
     root.innerHTML += "<p>Your cart is empty.</p>";
     return;
   }
 
-  const cartList = document.createElement("ul");
-  for (const id in cart) {
-    const product = products.find(p => p.id == id);
-    const li = document.createElement("li");
-    li.textContent = `${product.name} - Quantity: ${cart[id]}`;
-    cartList.appendChild(li);
+  const container = document.createElement("div");
+  container.className = "cart-container";
+
+  let total = 0;
+
+  for (let id in cart) {
+    const prod = products.find(p => p.id == id);
+    const quantity = cart[id];
+    const itemTotal = prod.price * quantity;
+    total += itemTotal;
+
+    const item = document.createElement("div");
+    item.className = "cart-item";
+    item.innerHTML = `
+      <h4>${prod.name}</h4>
+      <p>Qty: ${quantity} | ₹${itemTotal}</p>
+    `;
+    container.appendChild(item);
   }
 
-  root.appendChild(cartList);
+  const totalDisplay = document.createElement("div");
+  totalDisplay.className = "total-price";
+  totalDisplay.textContent = `Total Order Value: ₹${total}`;
+
+  root.appendChild(container);
+  root.appendChild(totalDisplay);
 };
 
 // Run showProducts initially
 window.onload = showProducts;
+
+// Add event listeners to Home and Cart buttons
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("homeBtn").onclick = showProducts;
+  document.getElementById("cartBtn").onclick = dispCart;
+});
