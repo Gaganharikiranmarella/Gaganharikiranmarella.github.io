@@ -1,27 +1,101 @@
+/* Product box with subtle gradient and shadow */
 .product-box {
-  border: 1px solid #333;
-  padding: 15px;
-  margin: 10px;
-  display: inline-block;
-  width: 150px;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  width: 180px;
   text-align: center;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  vertical-align: top;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-header ul {
-  display: flex;
-  gap: 20px;
+  display: inline-block;
+  background: linear-gradient(145deg, #ffffff, #e6e6ff);
+  box-shadow: 0 8px 15px rgba(0, 0, 50, 0.1),
+              inset 0 -3px 10px rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
 }
 
+.product-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 70, 0.2),
+              inset 0 -3px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Product title */
+.product-box h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Price styling */
+.product-box p {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Button styling */
+.product-box button {
+  background: #5a67d8;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(90, 103, 216, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-box button:hover {
+  background: #434190;
+  box-shadow: 0 8px 18px rgba(67, 65, 144, 0.6);
+}
+
+/* Reset ul */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header nav */
+header ul {
+  display: flex;
+  gap: 25px;
+  cursor: pointer;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
 header ul li:hover {
-  text-decoration: underline;
-  color: blue;
+  color: #5a67d8;
+  border-bottom: 2px solid #5a67d8;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Add some spacing around header */
+header {
+  padding: 20px 40px;
+  background: #f9faff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
 }
