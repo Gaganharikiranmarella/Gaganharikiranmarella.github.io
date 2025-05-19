@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bank ATM</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Bank ATM</h1>
-    <hr />
+    <div class="container">
+      <h1>Bank ATM</h1>
+      <div id="login-box">
+        <input type="text" id="card" placeholder="Enter Card Number" />
+        <input type="password" id="pin" placeholder="Enter PIN" />
+        <button onclick="login()">Login</button>
+        <p id="msg"></p>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
