@@ -22,6 +22,7 @@ function login() {
       </select>
       <div id="action-area"></div>
       <p id="action-msg"></p>
+      <button onclick="logout()">Logout</button>
     `;
   } else {
     msg.textContent = "Invalid card or PIN";
@@ -71,4 +72,17 @@ function withdraw() {
   } else {
     document.getElementById("action-msg").textContent = "Enter a valid amount";
   }
+}
+
+function logout() {
+  currentUser = null;
+  document.getElementById("atm").innerHTML = `
+    <div id="login-box">
+      <h2>ATM Login</h2>
+      <input type="text" id="card" placeholder="Card Number" />
+      <input type="password" id="pin" placeholder="PIN" />
+      <button onclick="login()">Login</button>
+      <p id="login-msg"></p>
+    </div>
+  `;
 }
