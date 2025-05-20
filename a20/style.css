@@ -1,63 +1,59 @@
 body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #222831, #393e46);
-  color: #eeeeee;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-#atm {
-  background-color: #2c2c2c;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  width: 320px;
-  text-align: center;
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  animation: fadeIn 0.7s ease-in-out;
 }
 
-h2 {
-  margin-bottom: 20px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="number"],
-select {
+input, select, button {
   width: 100%;
   padding: 10px;
-  margin: 10px 0 20px;
-  border: none;
-  border-radius: 6px;
-  background-color: #393e46;
-  color: #eeeeee;
+  margin: 10px 0;
+  border: 2px solid #0072ff;
+  border-radius: 8px;
   font-size: 16px;
+  outline: none;
+  transition: 0.3s;
 }
 
-select {
-  cursor: pointer;
+input:focus, select:focus {
+  border-color: #00c6ff;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #00adb5;
-  color: #eeeeee;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  background: #0072ff;
+  color: white;
   cursor: pointer;
-  transition: background 0.2s;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #00838f;
+  background: #00c6ff;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #0072ff;
 }
 
 #login-msg, #action-msg {
-  color: #ff6b6b;
-  margin-top: 10px;
-  font-size: 14px;
+  color: red;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

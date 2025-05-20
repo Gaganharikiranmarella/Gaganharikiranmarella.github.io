@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ATM Project</title>
+  <title>ATM System</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="atm">
+  <div id="atm" class="card">
+    <h1>Bank ATM</h1>
     <div id="login-box">
-      <h2>ATM Login</h2>
       <input type="text" id="card" placeholder="Card Number" />
       <input type="password" id="pin" placeholder="PIN" />
       <button onclick="login()">Login</button>
       <p id="login-msg"></p>
     </div>
   </div>
-
-  <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
