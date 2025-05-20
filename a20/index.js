@@ -1,4 +1,4 @@
-const customers = [
+const customers = [ 
   { cart: "1234567890", pin: "1234", name: "John", balance: 1000 },
   { cart: "1234567891", pin: "2345", name: "Cathy", balance: 800 }
 ];
@@ -6,8 +6,8 @@ const customers = [
 let currentUser = null;
 
 function login() {
-  const card = document.getElementById("card").value;
-  const pin = document.getElementById("pin").value;
+  const card = document.getElementById("card").value.trim();
+  const pin = document.getElementById("pin").value.trim();
   const msg = document.getElementById("login-msg");
 
   const found = customers.find(c => c.cart === card && c.pin === pin);
@@ -54,10 +54,15 @@ function handleAction() {
   const msg = document.getElementById("action-msg");
   msg.textContent = "";
 
-  if (action === "deposit" || action === "withdraw") {
+  if (action === "deposit") {
     area.innerHTML = `
       <input type="number" id="amount" placeholder="Enter amount" />
-      <button onclick="${action}()">OK</button>
+      <button onclick="deposit()">OK</button>
+    `;
+  } else if (action === "withdraw") {
+    area.innerHTML = `
+      <input type="number" id="amount" placeholder="Enter amount" />
+      <button onclick="withdraw()">OK</button>
     `;
   } else if (action === "transfer") {
     let options = customers
