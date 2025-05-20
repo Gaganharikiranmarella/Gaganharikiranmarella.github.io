@@ -35,7 +35,69 @@ button {
   border-radius: 8px;
   background-color: #00c9a7;
   color: #fff;
-  font-weight: bold;
+  font-weight: bold;body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #1e1e2f;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #2c2f4a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  width: 300px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00d1b2;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input {
+  background: #3a3f5c;
+  color: #fff;
+}
+
+button {
+  background: #00d1b2;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #00b89f;
+}
+
+select {
+  background: #3a3f5c;
+  color: #fff;
+}
+
+#login-msg, #action-msg {
+  margin-top: 10px;
+  text-align: center;
+  color: #ffcc00;
+}
+
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
