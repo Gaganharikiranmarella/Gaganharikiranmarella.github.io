@@ -16,10 +16,13 @@ h1 {
   font-size: 2.8em;
   margin-bottom: 10px;
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;                
+  -webkit-background-clip: text;        
+  -webkit-text-fill-color: transparent; 
+  display: inline-block;               
   animation: glow 2s ease-in-out infinite alternate;
 }
+
 
 h2 {
   color: #cccccc;
@@ -87,6 +90,7 @@ hr {
   border: none;
   height: 3px;
   background: linear-gradient(to right, #f06292, #64b5f6, #f06292);
+   background-size: 200% auto;
   width: 85%;
   border-radius: 5px;
   animation: shine 5s linear infinite;
@@ -152,4 +156,32 @@ hr {
 @keyframes shine {
   0% { background-position: 0 0; }
   100% { background-position: 200% 0; }
+}
+
+.item-container {
+  background: #1a1a1a;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.item-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(255, 105, 180, 0.3);
+}
+
+.item-container .overview {
+  margin: 0 0 8px 0;
+  font-style: italic;
+  color: #cccccc;
+  font-size: 14px;
+  animation: fadeIn 1s ease;
+}
+
+/* Optional: fade-in animation for overview text */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
