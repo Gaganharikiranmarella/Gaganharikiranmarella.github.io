@@ -1,41 +1,53 @@
 /* Base styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #f0f0f0;
   margin: 0;
   padding: 40px 20px;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Headings */
 h1 {
   color: #ffffff;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 10px;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 h2 {
-  color: #bbbbbb;
+  color: #cccccc;
   text-align: center;
-  font-weight: 400;
-  font-size: 1.8em;
+  font-weight: 500;
+  font-size: 2em;
+  margin-top: 30px;
 }
 
 h3 {
   color: #4fc3f7;
   margin-top: 40px;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.5em;
 }
 
 /* Ordered list */
 ol {
-  background: #1e1e1e;
+  background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
   padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  border: 1px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid #444;
+  transition: transform 0.3s ease;
+}
+
+ol:hover {
+  transform: scale(1.01);
 }
 
 /* List items */
@@ -43,6 +55,16 @@ li {
   margin: 12px 0;
   font-size: 17px;
   color: #e0e0e0;
+  position: relative;
+  padding-left: 25px;
+}
+
+li::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  color: #f06292;
+  animation: flicker 2s infinite alternate;
 }
 
 /* Links */
@@ -56,37 +78,78 @@ a {
 a:hover {
   color: #ffffff;
   border-bottom: 1px dashed #ffffff;
+  text-shadow: 0 0 8px #82b1ff;
 }
 
 /* Divider */
 hr {
   margin: 40px auto;
   border: none;
-  height: 2px;
-  background: linear-gradient(to right, #333, #555, #333);
-  width: 80%;
+  height: 3px;
+  background: linear-gradient(to right, #f06292, #64b5f6, #f06292);
+  width: 85%;
   border-radius: 5px;
+  animation: shine 5s linear infinite;
 }
+
 /* Floating animation */
 .floating {
   animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
   100% { transform: translateY(0); }
 }
 
 /* Hover card scale */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(120deg, #1d1d1d, #282828);
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 .card:hover {
   transform: scale(1.05);
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(98, 0, 234, 0.3);
 }
 
 /* Button hover effect */
+.btn {
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .btn:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #ff6ec4, 0 0 25px #7873f5;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff6ec4, 0 0 20px #7873f5;
+  }
+  to {
+    text-shadow: 0 0 20px #ff6ec4, 0 0 30px #7873f5;
+  }
+}
+
+/* Flicker Effect */
+@keyframes flicker {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Shine Animation for Divider */
+@keyframes shine {
+  0% { background-position: 0 0; }
+  100% { background-position: 200% 0; }
 }
