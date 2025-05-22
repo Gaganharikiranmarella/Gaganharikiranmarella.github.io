@@ -69,17 +69,14 @@ li::before {
   animation: flicker 2s infinite alternate;
 }
 
-/* Links */
 a {
   color: #6bd4ff;
   text-decoration: none;
-  border-bottom: 1px dashed transparent;
   transition: all 0.2s ease-in-out;
 }
 
 a:hover {
   color: #ffffff;
-  border-bottom: 1px dashed #ffffff;
   text-shadow: 0 0 8px #6bd4ff;
 }
 
