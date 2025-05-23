@@ -38,17 +38,18 @@ h3 {
   font-size: 1.5em;
 }
 
-/* Ordered list */
-ol {
+/* Ordered list container */
+ol.card {
   background: linear-gradient(145deg, #1e3557, #284a6e);
   padding: 20px 30px;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   border: 1px solid #3b7bc6;
   transition: transform 0.3s ease;
+  list-style-position: inside;
 }
 
-ol:hover {
+ol.card:hover {
   transform: scale(1.01);
 }
 
@@ -117,7 +118,7 @@ hr {
   box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
 }
 
-/* Button hover effect */
+/* Button hover effect (if you add buttons later) */
 .btn {
   background: linear-gradient(to right, #00d4ff, #3a7bd5);
   color: white;
@@ -154,6 +155,7 @@ hr {
   100% { background-position: 200% 0; }
 }
 
+/* Assignment list container */
 .item-container {
   background: #183c5a;
   padding: 15px 20px;
