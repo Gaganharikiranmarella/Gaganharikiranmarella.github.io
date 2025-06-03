@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Name API Output</title>
+  <link rel="stylesheet" href="substyles.css" />
+</head>
+<body>
+  <div class="output-container">
+    <h1>API: /name</h1>
+    <div class="output-box" id="apiOutput">Loading...</div>
+  </div>
+
+  <script>
+    fetch("https://node-apps-gagan.vercel.app/name")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("apiOutput").textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById("apiOutput").textContent = "❌ Error: " + err.message;
+      });
+  </script>
+</body>
+</html>
