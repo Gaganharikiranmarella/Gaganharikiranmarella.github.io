@@ -15,7 +15,7 @@ if (grid) {
     card.innerHTML = `
       <h3>API ${index + 1}</h3>
       <p class="api-url">${url}</p>
-      <pre>Loading...</pre>
+      <pre>Loading....</pre>
     `;
     grid.appendChild(card);
 
@@ -35,8 +35,6 @@ if (grid) {
   } else {
     output = await res.text();
   }
-
-
       card.querySelector("pre").textContent = output;
     } catch (e) {
       card.querySelector("pre").textContent = `❌ Error: ${e.message}`;
