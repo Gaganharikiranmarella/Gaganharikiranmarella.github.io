@@ -20,15 +20,22 @@ if (grid) {
     grid.appendChild(card);
 
     try {
-      const res = await fetch(url);
-      const type = res.headers.get("content-type");
-      let output;
+  const res = await fetch(url);
+  const type = res.headers.get("content-type") || "";
+  let output;
 
-      if (type && type.includes("application/json")) {
-        output = JSON.stringify(await res.json(), null, 2);
-      } else {
-        output = await res.text();
-      }
+  if (type.toLowerCase().includes("application/json")) {
+    try {
+      const jsonData = await res.json();
+      output = JSON.stringify(jsonData, null, 2);
+    } catch (jsonError) {
+      // If parsing JSON fails, fallback to text
+      output = await res.text();
+    }
+  } else {
+    output = await res.text();
+  }
+
 
       card.querySelector("pre").textContent = output;
     } catch (e) {
