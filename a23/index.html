@@ -34,8 +34,16 @@
       <div class="url-label"></div>
       <pre class="api-output"></pre>
     </div>
+
+    <!-- Place at end of .container -->
+   <button id="goFinalBtn" class="final-btn">Final Output</button>
   </div>
 
   <script src="script.js"></script>
+  <script>
+    document.getElementById("goFinalBtn").onclick = () => {
+      window.location.href = "final.html";
+    };
+  </script>
 </body>
 </html>
