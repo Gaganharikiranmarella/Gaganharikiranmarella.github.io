@@ -1,158 +1,221 @@
-/* Base styles */
+/* Reset & base */
 body {
+  margin: 0; padding: 40px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  color: #000;
-  margin: 0;
-  padding: 40px 20px;
-  line-height: 1.6;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: #e0f7ff;
   overflow-x: hidden;
-  transition: background 1s ease;
+  transition: background 0.8s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Header */
+/* Floating header */
 header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  z-index: 10;
+  position: relative;
+  user-select: none;
 }
 
-h1 {
-  font-size: 2.8em;
+header h1.floating {
+  font-size: 3rem;
   background: linear-gradient(90deg, #00d4ff, #4facfe);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
   animation: glow 2s ease-in-out infinite alternate;
+  margin-bottom: 0;
 }
 
-h2 {
-  color: #1b263b;
+header h2 {
   font-weight: 500;
-  font-size: 1.6em;
-  margin-top: 10px;
+  font-size: 1.6rem;
+  color: #a8dadc;
+  margin-top: 4px;
+  letter-spacing: 0.05em;
 }
 
-h3 {
-  font-size: 1.4em;
-  color: #000;
-  margin-bottom: 10px;
-}
-
-/* Layout container */
-.dual-section {
+/* Main container for projects & assignments side by side */
+.main-container {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
   gap: 20px;
-  flex-wrap: wrap;
+  user-select: none;
 }
 
-/* Projects */
-.projects {
+/* Vertical separator */
+.separator {
+  width: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  align-self: stretch;
+  margin: 0 10px;
+}
+
+/* Section common */
+section {
   flex: 1;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  transition: background 1s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.projects:hover {
-  background: linear-gradient(to left, #4facfe, #00d4ff);
-  color: white;
-}
-
-.project-card {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  margin: 10px 0;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 18px rgba(0, 191, 255, 0.3);
-}
-
-.project-card a {
-  color: #004d80;
-  text-decoration: none;
-}
-
-/* Assignments */
-.assignments {
-  flex: 1;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  transition: background 1s ease;
-}
-
-.assignments:hover {
-  background: linear-gradient(to right, #ff6b6b, #ff8e53);
-  color: white;
-}
-
-.assignment-card {
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  margin: 10px;
+/* Section titles */
+section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #61dafb;
+  margin: 0;
+  user-select: text;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  transition: transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.assignment-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
+/* Projects list: rectangles */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.assignment-card .icon {
-  font-size: 30px;
-  margin-top: 10px;
-}
-
-.assignment-card a {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #800000;
+.project-item {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+  color: #d0ecff;
+  font-weight: 600;
+  font-size: 1.1rem;
   text-decoration: none;
+  transition: background 0.5s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  user-select: text;
 }
 
-/* Glow Animation */
+.project-item:hover {
+  background: linear-gradient(90deg, #00bfff, #0050ff);
+  box-shadow: 0 8px 30px #00bfff;
+  border-color: #00bfff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Assignments list: squares with icon on top */
+.assignments-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.assignment-item {
+  background: linear-gradient(135deg, #5a1e1e, #982a2a);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffd7d7;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  text-align: center;
+  padding: 10px 8px;
+  transition: background 0.5s ease, box-shadow 0.3s ease;
+  user-select: text;
+  cursor: pointer;
+}
+
+.assignment-item:hover {
+  background: linear-gradient(90deg, #ff0000, #b30000);
+  box-shadow: 0 8px 30px #ff0000;
+  border-color: #ff0000;
+  color: white;
+}
+
+/* Icon on top */
+.assignment-item .icon {
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+  user-select: none;
+}
+
+/* Remove default list styles */
+.projects-list,
+.assignments-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links styling inside project and assignment items */
+.project-item,
+.assignment-item {
+  color: inherit;
+  text-decoration: none;
+  user-select: text;
+}
+
+.project-item a:hover,
+.assignment-item a:hover {
+  text-decoration: underline;
+}
+
+/* Page background glass effect on hover states */
+body.projects-hovered {
+  background: linear-gradient(135deg, #00bfffcc, #0050ffcc);
+  backdrop-filter: saturate(180%) blur(12px);
+  transition: background 0.8s ease;
+}
+
+body.assignments-hovered {
+  background: linear-gradient(135deg, #ff3b3bcc, #b30000cc);
+  backdrop-filter: saturate(180%) blur(12px);
+  transition: background 0.8s ease;
+}
+
+/* Glow animation for floating header */
 @keyframes glow {
-  from {
+  0% {
     text-shadow: 0 0 10px #00d4ff, 0 0 20px #3a7bd5;
   }
-  to {
+  100% {
     text-shadow: 0 0 20px #00d4ff, 0 0 30px #3a7bd5;
   }
 }
 
-/* Responsive Colors */
-@media (max-width: 480px) {
-  body {
-    background: linear-gradient(to bottom, #000, #2196f3);
-    color: white;
+/* Responsive */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
   }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  body {
-    background: linear-gradient(to bottom, #00ff7f, #ffeb3b);
-    color: black;
+  .separator {
+    width: 100%;
+    height: 2px;
+    margin: 20px 0;
   }
-}
-
-@media (min-width: 769px) {
-  body {
-    background: rgba(255, 255, 255, 0.15);
-    color: black;
+  .assignments-list {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  .assignment-item {
+    width: 80px;
+    height: 80px;
+    font-size: 0.85rem;
+  }
+  .project-item {
+    padding: 15px 20px;
+    font-size: 1rem;
   }
 }

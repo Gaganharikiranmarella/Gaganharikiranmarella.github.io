@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add('projects-hovered');
     body.classList.remove('assignments-hovered');
   });
-
   projectsSection.addEventListener('mouseleave', () => {
     body.classList.remove('projects-hovered');
   });
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add('assignments-hovered');
     body.classList.remove('projects-hovered');
   });
-
   assignmentsSection.addEventListener('mouseleave', () => {
     body.classList.remove('assignments-hovered');
   });
