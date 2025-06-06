@@ -1,184 +1,123 @@
-/* Base styles */
+/* === Base Setup === */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0d1b2a, #1b263b);
-  color: #e0f7ff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #1e1e1e;
   margin: 0;
-  padding: 40px 20px;
-  line-height: 1.6;
-  overflow-x: hidden;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease;
 }
 
-/* Headings */
-h1 {
-  color: #ffffff;
-  text-align: center;
-  font-size: 2.8em;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #00d4ff, #4facfe);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  animation: glow 2s ease-in-out infinite alternate;
+/* === Grid Layout === */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
-h2 {
-  color: #a8dadc;
-  text-align: center;
-  font-weight: 500;
-  font-size: 2em;
-  margin-top: 30px;
-}
-
-h3 {
-  color: #61dafb;
-  margin-top: 40px;
-  font-weight: 600;
-  font-size: 1.5em;
-}
-
-/* Ordered list container */
-ol.card {
-  background: linear-gradient(145deg, #1e3557, #284a6e);
-  padding: 20px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  border: 1px solid #3b7bc6;
-  transition: transform 0.3s ease;
-  list-style-position: inside;
-}
-
-ol.card:hover {
-  transform: scale(1.01);
-}
-
-/* List items */
-li {
-  margin: 12px 0;
-  font-size: 17px;
-  color: #d0ecff;
-  position: relative;
-  padding-left: 25px;
-}
-
-li::before {
-  content: "⚡";
-  position: absolute;
-  left: 0;
-  color: #00bfff;
-  animation: flicker 2s infinite alternate;
-}
-
-a {
-  color: #6bd4ff;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-
-a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px #6bd4ff;
-}
-
-/* Divider */
-hr {
-  margin: 40px auto;
-  border: none;
-  height: 3px;
-  background: linear-gradient(to right, #00d2ff, #3a7bd5, #00d2ff);
-  background-size: 200% auto;
-  width: 85%;
-  border-radius: 5px;
-  animation: shine 5s linear infinite;
-}
-
-/* Floating animation */
-.floating {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
-}
-
-/* Hover card scale */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: linear-gradient(120deg, #1e3c72, #2a5298);
-  border: 1px solid #0077ff;
-  border-radius: 12px;
+/* === Project Card === */
+.project-card {
+  border-radius: 20px;
+  background: #ffffffaa;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.6s ease, box-shadow 0.4s ease;
+  background-image: linear-gradient(to left, #ffffff 50%, #008cff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  cursor: pointer;
   overflow: hidden;
+  position: relative;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+.project-card:hover {
+  background-position: left bottom;
+  box-shadow: 0 10px 40px rgba(0, 140, 255, 0.4);
 }
 
-/* Button hover effect (if you add buttons later) */
-.btn {
-  background: linear-gradient(to right, #00d4ff, #3a7bd5);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* === Assignment Card === */
+.assignment-card {
+  border-radius: 20px;
+  background: #ffffffaa;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  text-align: center;
+  transition: background 0.6s ease, box-shadow 0.4s ease;
+  background-image: linear-gradient(to right, #ffffff 50%, #ff4f4f 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
 
-.btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 15px #00d4ff, 0 0 25px #3a7bd5;
+.assignment-card:hover {
+  background-position: right bottom;
+  box-shadow: 0 10px 40px rgba(255, 0, 0, 0.3);
 }
 
-/* Glow Animation */
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #00d4ff, 0 0 20px #3a7bd5;
+/* === Icon & Number === */
+.assignment-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: popin 0.5s ease;
+}
+
+.assignment-card .label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* === Animations === */
+@keyframes popin {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
   }
-  to {
-    text-shadow: 0 0 20px #00d4ff, 0 0 30px #3a7bd5;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-/* Flicker Effect */
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.6; }
-  100% { opacity: 1; }
+/* === Responsive Glass Themes === */
+@media (max-width: 767px) {
+  body {
+    background: linear-gradient(to right, #000000cc, #004cffcc);
+  }
 }
 
-/* Shine Animation for Divider */
-@keyframes shine {
-  0% { background-position: 0 0; }
-  100% { background-position: 200% 0; }
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background: linear-gradient(to right, #00ff90cc, #fff233cc);
+  }
 }
 
-/* Assignment list container */
-.item-container {
-  background: #183c5a;
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+@media (min-width: 1024px) {
+  body {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+  }
 }
 
-.item-container:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 191, 255, 0.4);
-}
-
-.item-container .overview {
-  margin: 0 0 8px 0;
-  font-style: italic;
-  color: #aeeaff;
-  font-size: 14px;
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* === Optional: Transition when hovering === */
+.project-card::before,
+.assignment-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+  background: inherit;
 }
