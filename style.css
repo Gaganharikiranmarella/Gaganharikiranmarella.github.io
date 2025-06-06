@@ -1,123 +1,158 @@
-/* === Base Setup === */
+/* Base styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #1e1e1e;
-  margin: 0;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.5s ease;
-}
-
-/* === Grid Layout === */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
-}
-
-/* === Project Card === */
-.project-card {
-  border-radius: 20px;
-  background: #ffffffaa;
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: background 0.6s ease, box-shadow 0.4s ease;
-  background-image: linear-gradient(to left, #ffffff 50%, #008cff 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
+  color: #000;
+  margin: 0;
+  padding: 40px 20px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 1s ease;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.8em;
+  background: linear-gradient(90deg, #00d4ff, #4facfe);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+h2 {
+  color: #1b263b;
+  font-weight: 500;
+  font-size: 1.6em;
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 1.4em;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Layout container */
+.dual-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Projects */
+.projects {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  transition: background 1s ease;
+}
+
+.projects:hover {
+  background: linear-gradient(to left, #4facfe, #00d4ff);
+  color: white;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  margin: 10px 0;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  background-position: left bottom;
-  box-shadow: 0 10px 40px rgba(0, 140, 255, 0.4);
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 191, 255, 0.3);
 }
 
-/* === Assignment Card === */
+.project-card a {
+  color: #004d80;
+  text-decoration: none;
+}
+
+/* Assignments */
+.assignments {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  transition: background 1s ease;
+}
+
+.assignments:hover {
+  background: linear-gradient(to right, #ff6b6b, #ff8e53);
+  color: white;
+}
+
 .assignment-card {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  background: #ffffffaa;
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
+  margin: 10px;
   text-align: center;
-  transition: background 0.6s ease, box-shadow 0.4s ease;
-  background-image: linear-gradient(to right, #ffffff 50%, #ff4f4f 50%);
-  background-size: 200% 100%;
-  background-position: left bottom;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
 .assignment-card:hover {
-  background-position: right bottom;
-  box-shadow: 0 10px 40px rgba(255, 0, 0, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
 }
 
-/* === Icon & Number === */
 .assignment-card .icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  animation: popin 0.5s ease;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
-.assignment-card .label {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #333;
+.assignment-card a {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #800000;
+  text-decoration: none;
 }
 
-/* === Animations === */
-@keyframes popin {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
+/* Glow Animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #3a7bd5;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+  to {
+    text-shadow: 0 0 20px #00d4ff, 0 0 30px #3a7bd5;
   }
 }
 
-/* === Responsive Glass Themes === */
-@media (max-width: 767px) {
+/* Responsive Colors */
+@media (max-width: 480px) {
   body {
-    background: linear-gradient(to right, #000000cc, #004cffcc);
+    background: linear-gradient(to bottom, #000, #2196f3);
+    color: white;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 481px) and (max-width: 768px) {
   body {
-    background: linear-gradient(to right, #00ff90cc, #fff233cc);
+    background: linear-gradient(to bottom, #00ff7f, #ffeb3b);
+    color: black;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
   body {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.15);
+    color: black;
   }
-}
-
-/* === Optional: Transition when hovering === */
-.project-card::before,
-.assignment-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  z-index: -1;
-  transition: opacity 0.6s ease;
-  background: inherit;
 }

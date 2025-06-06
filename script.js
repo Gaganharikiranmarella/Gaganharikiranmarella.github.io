@@ -1,26 +1,23 @@
-// This script handles dynamic glassmorphism and theme transitions based on user hover
-const body = document.body;
-const projectCard = document.querySelector('.project-card');
-const assignmentCard = document.querySelector('.assignment-card');
+document.addEventListener('DOMContentLoaded', () => {
+  const projectsSection = document.getElementById('projects-section');
+  const assignmentsSection = document.getElementById('assignments-section');
+  const body = document.body;
 
-// Reset function
-function resetTheme() {
-  body.style.background = '';
-  body.style.backdropFilter = 'blur(12px)';
-  body.style.webkitBackdropFilter = 'blur(12px)';
-}
+  projectsSection.addEventListener('mouseenter', () => {
+    body.classList.add('projects-hovered');
+    body.classList.remove('assignments-hovered');
+  });
 
-// Handle hover over project
-projectCard.addEventListener('mouseenter', () => {
-  body.style.background = 'linear-gradient(to left, rgba(0,140,255,0.2), rgba(255,255,255,0.05))';
-});
+  projectsSection.addEventListener('mouseleave', () => {
+    body.classList.remove('projects-hovered');
+  });
 
-// Handle hover over assignment
-assignmentCard.addEventListener('mouseenter', () => {
-  body.style.background = 'linear-gradient(to right, rgba(255,0,0,0.2), rgba(255,255,255,0.05))';
-});
+  assignmentsSection.addEventListener('mouseenter', () => {
+    body.classList.add('assignments-hovered');
+    body.classList.remove('projects-hovered');
+  });
 
-// Revert on mouse leave
-[projectCard, assignmentCard].forEach(card => {
-  card.addEventListener('mouseleave', resetTheme);
+  assignmentsSection.addEventListener('mouseleave', () => {
+    body.classList.remove('assignments-hovered');
+  });
 });
