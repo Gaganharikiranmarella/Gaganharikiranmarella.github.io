@@ -1,8 +1,8 @@
 /* Base styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
   color: #000;
   margin: 0;
   padding: 40px 20px;
@@ -49,95 +49,77 @@ h3 {
 .main-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
   width: 100%;
   max-width: 1100px;
 }
 
-/* Projects */
+/* Projects Section */
 .projects {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  transition: background 1s ease;
-}
-
-.projects:hover {
-  background: rgba(0, 212, 255, 0.3);
-  color: white;
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
-  margin: 10px 0;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px 0;
+  padding: 15px 25px;
+  border-left: 4px solid #00d4ff;
+  background: transparent;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 18px rgba(0, 191, 255, 0.3);
+  transform: scale(1.02);
+  filter: brightness(1.1);
 }
 
 .project-card a {
   color: #004d80;
   text-decoration: none;
+  font-weight: bold;
 }
 
-/* Assignments */
+/* Assignments Section */
 .assignments {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  transition: background 1s ease;
-}
-
-.assignments:hover {
-  background: rgba(255, 99, 132, 0.3);
-  color: white;
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 .assignments-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 20px;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
 }
 
 .assignment-card {
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  border-left: 4px solid #ff6384;
+  background: transparent;
   transition: transform 0.3s ease;
 }
 
 .assignment-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
+  filter: brightness(1.1);
 }
 
 .assignment-card .icon {
-  font-size: 30px;
-  margin-bottom: 5px;
+  font-size: 24px;
+  margin-right: 8px;
 }
 
 .assignment-card a {
-  font-size: 14px;
   color: #800000;
   text-decoration: none;
+  font-weight: 500;
 }
 
 /* Glow Animation */
@@ -150,20 +132,14 @@ h3 {
   }
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .assignment-card {
-    width: 80px;
-    height: 80px;
+    padding: 8px 16px;
     font-size: 0.85rem;
   }
-
-  .assignments-grid {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  }
-
   .project-card {
-    padding: 12px;
+    padding: 12px 20px;
     font-size: 0.95rem;
   }
 }
@@ -184,7 +160,7 @@ h3 {
 
 @media (min-width: 769px) {
   body {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     color: black;
   }
 }
