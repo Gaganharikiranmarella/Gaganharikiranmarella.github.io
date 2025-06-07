@@ -1,8 +1,10 @@
-/* Base styles */
+/* Base Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: rgba(255, 255, 255, 0.15);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 20%, transparent 70%);
+  background-size: 200% 200%;
   backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.8); /* fallback */
   color: #000;
   margin: 0;
   padding: 40px 20px;
@@ -13,58 +15,62 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  animation: bgCycle 10s infinite alternate;
+  animation: rippleWhite 10s infinite linear;
 }
 
-/* Animated Background for Large Screens (PC) */
-@media (min-width: 769px) {
-  body {
-    background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(255, 255, 255, 0.1));
-    animation: bgPC 10s infinite alternate;
-  }
-}
-
-@keyframes bgPC {
+/* Water ripple effect (default white) */
+@keyframes rippleWhite {
   0% {
-    background: rgba(0, 191, 255, 0.2);
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
   100% {
-    background: rgba(0, 140, 255, 0.3);
+    background-position: 0% 0%;
   }
 }
 
-/* Animated Background for Tablets */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Laptops (>=1024px) - Blue Ripple */
+@media (min-width: 1024px) {
   body {
-    background: linear-gradient(135deg, rgba(0, 255, 127, 0.2), rgba(255, 255, 255, 0.1));
-    animation: bgTab 10s infinite alternate;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.3) 20%, transparent 70%);
+    background-size: 200% 200%;
+    animation: rippleBlue 10s infinite linear;
   }
 }
 
-@keyframes bgTab {
+@keyframes rippleBlue {
   0% {
-    background: rgba(0, 255, 127, 0.2);
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
   100% {
-    background: rgba(0, 200, 100, 0.3);
+    background-position: 0% 0%;
   }
 }
 
-/* Animated Background for Phones */
+/* Phones (<=480px) - Red Ripple */
 @media (max-width: 480px) {
   body {
-    background: linear-gradient(135deg, rgba(255, 69, 58, 0.2), rgba(255, 255, 255, 0.1));
-    animation: bgPhone 10s infinite alternate;
+    background: radial-gradient(circle, rgba(255, 69, 58, 0.3) 20%, transparent 70%);
+    background-size: 200% 200%;
+    animation: rippleRed 10s infinite linear;
     color: white;
   }
 }
 
-@keyframes bgPhone {
+@keyframes rippleRed {
   0% {
-    background: rgba(255, 69, 58, 0.2);
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
   100% {
-    background: rgba(255, 0, 0, 0.3);
+    background-position: 0% 0%;
   }
 }
 
@@ -98,7 +104,7 @@ h3 {
   text-align: center;
 }
 
-/* Layout container */
+/* Layout Container */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -124,6 +130,7 @@ h3 {
 .project-card:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 24px rgba(0, 191, 255, 0.3);
+  cursor: pointer;
 }
 
 .project-card a {
@@ -155,6 +162,7 @@ h3 {
 .assignment-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .assignment-card .icon {
