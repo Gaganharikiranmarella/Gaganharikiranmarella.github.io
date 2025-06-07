@@ -1,10 +1,8 @@
-/* Base Styles */
+/* Base styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 20%, transparent 70%);
-  background-size: 200% 200%;
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.8); /* fallback */
   color: #000;
   margin: 0;
   padding: 40px 20px;
@@ -15,62 +13,58 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  animation: rippleWhite 10s infinite linear;
+  animation: bgCycle 10s infinite alternate;
 }
 
-/* Water ripple effect (default white) */
-@keyframes rippleWhite {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-/* Laptops (>=1024px) - Blue Ripple */
-@media (min-width: 1024px) {
+/* Animated Background for Large Screens (PC) */
+@media (min-width: 769px) {
   body {
-    background: radial-gradient(circle, rgba(0, 191, 255, 0.3) 20%, transparent 70%);
-    background-size: 200% 200%;
-    animation: rippleBlue 10s infinite linear;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(255, 255, 255, 0.1));
+    animation: bgPC 10s infinite alternate;
   }
 }
 
-@keyframes rippleBlue {
+@keyframes bgPC {
   0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
+    background: rgba(0, 191, 255, 0.2);
   }
   100% {
-    background-position: 0% 0%;
+    background: rgba(0, 140, 255, 0.3);
   }
 }
 
-/* Phones (<=480px) - Red Ripple */
+/* Animated Background for Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    background: linear-gradient(135deg, rgba(0, 255, 127, 0.2), rgba(255, 255, 255, 0.1));
+    animation: bgTab 10s infinite alternate;
+  }
+}
+
+@keyframes bgTab {
+  0% {
+    background: rgba(0, 255, 127, 0.2);
+  }
+  100% {
+    background: rgba(0, 200, 100, 0.3);
+  }
+}
+
+/* Animated Background for Phones */
 @media (max-width: 480px) {
   body {
-    background: radial-gradient(circle, rgba(255, 69, 58, 0.3) 20%, transparent 70%);
-    background-size: 200% 200%;
-    animation: rippleRed 10s infinite linear;
+    background: linear-gradient(135deg, rgba(255, 69, 58, 0.2), rgba(255, 255, 255, 0.1));
+    animation: bgPhone 10s infinite alternate;
     color: white;
   }
 }
 
-@keyframes rippleRed {
+@keyframes bgPhone {
   0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
+    background: rgba(255, 69, 58, 0.2);
   }
   100% {
-    background-position: 0% 0%;
+    background: rgba(255, 0, 0, 0.3);
   }
 }
 
@@ -80,14 +74,24 @@ header {
   margin-bottom: 30px;
 }
 
-h1 {
-  font-size: 2.8em;
-  background: linear-gradient(90deg, #00d4ff, #4facfe);
+/* Rainbow animated name */
+.rainbow-text {
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 1400% 1400%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
-  animation: glow 2s ease-in-out infinite alternate;
+  color: transparent;
+  animation: rainbowAnimation 10s ease infinite;
+}
+
+
+/* Glow animation for subtitle */
+.subtitle-glow {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #4facfe;
+  animation: glowColor 3s ease-in-out infinite alternate;
 }
 
 h2 {
@@ -104,7 +108,7 @@ h3 {
   text-align: center;
 }
 
-/* Layout Container */
+/* Layout container */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -130,7 +134,6 @@ h3 {
 .project-card:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 24px rgba(0, 191, 255, 0.3);
-  cursor: pointer;
 }
 
 .project-card a {
@@ -162,7 +165,6 @@ h3 {
 .assignment-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
-  cursor: pointer;
 }
 
 .assignment-card .icon {
@@ -183,6 +185,31 @@ h3 {
   }
   to {
     text-shadow: 0 0 20px #00d4ff, 0 0 30px #3a7bd5;
+  }
+}
+
+/* Rainbow animation keyframes */
+@keyframes rainbowAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glow color animation for subtitle */
+@keyframes glowColor {
+  from {
+    color: #4facfe;
+    text-shadow: 0 0 5px #4facfe, 0 0 10px #00d4ff;
+  }
+  to {
+    color: #00d4ff;
+    text-shadow: 0 0 15px #00d4ff, 0 0 30px #4facfe;
   }
 }
 
